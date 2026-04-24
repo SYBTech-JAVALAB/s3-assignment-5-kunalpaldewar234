@@ -1,0 +1,93 @@
+package Demo;
+
+class Payroll {
+
+    // a. Salary based on employee ID (basic fixed salary)
+    public void calculateSalary(int employeeID) {
+        double salary = 20000; // base salary
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Salary (Base): ₹" + salary);
+        System.out.println();
+    }
+
+    // b. Salary based on hours worked and rate
+    public void calculateSalary(int hoursWorked, double rate) {
+        double salary = hoursWorked * rate;
+        System.out.println("Hours Worked: " + hoursWorked);
+        System.out.println("Rate per Hour: ₹" + rate);
+        System.out.println("Salary: ₹" + salary);
+        System.out.println();
+    }
+
+    // c. Salary with employee ID and bonus
+    public void calculateSalary(int employeeID, int bonus) {
+        double salary = 20000 + bonus;
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Bonus: ₹" + bonus);
+        System.out.println("Salary with Bonus: ₹" + salary);
+        System.out.println();
+    }
+
+    // d. Salary based on annual salary
+    public void calculateSalary(double annualSalary) {
+        double monthlySalary = annualSalary / 12;
+        System.out.println("Annual Salary: ₹" + annualSalary);
+        System.out.println("Monthly Salary: ₹" + monthlySalary);
+        System.out.println();
+    }
+
+    // e. Salary with overtime
+    public void calculateSalary(int hoursWorked, double rate, int overtimeHours) {
+        double overtimePay = overtimeHours * rate * 1.5;
+        double salary = (hoursWorked * rate) + overtimePay;
+        System.out.println("Salary with Overtime: ₹" + salary);
+        System.out.println();
+    }
+
+    // f. Salary with deductions
+    public void calculateSalary(double salary, double deductions) {
+        double finalSalary = salary - deductions;
+        System.out.println("Original Salary: ₹" + salary);
+        System.out.println("Deductions: ₹" + deductions);
+        System.out.println("Final Salary: ₹" + finalSalary);
+        System.out.println();
+    }
+
+    // g. Salary with bonus and deductions
+    public void calculateSalary(double salary, double bonus, double deductions) {
+        double finalSalary = salary + bonus - deductions;
+        System.out.println("Base Salary: ₹" + salary);
+        System.out.println("Bonus: ₹" + bonus);
+        System.out.println("Deductions: ₹" + deductions);
+        System.out.println("Final Salary: ₹" + finalSalary);
+        System.out.println();
+    }
+}
+
+public class EmployeePayrollSystem {
+
+    public static void main(String[] args) {
+        Payroll p = new Payroll();
+
+        // a. employeeID
+        p.calculateSalary(101);
+
+        // b. hours_worked and rate
+        p.calculateSalary(40, 500);
+
+        // c. ID with bonus
+        p.calculateSalary(102, 3000);
+
+        // d. annual_salary
+        p.calculateSalary(600000);
+
+        // e. with_overtime
+        p.calculateSalary(40, 500, 10);
+
+        // f. with_deductions
+        p.calculateSalary(30000, 2000);
+
+        // g. with_bonus and deductions
+        p.calculateSalary(30000, 5000, 2000);
+    }
+}
